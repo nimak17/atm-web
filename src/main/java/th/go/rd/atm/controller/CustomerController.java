@@ -21,7 +21,7 @@ public class CustomerController {
 
     //private ArrayList<Customer> customers = new ArrayList<>();
 
-    @GetMapping("/customer")
+    @GetMapping
     //@RequestMapping("/customer") //URL
     public String getCustomerPage(Model model) {
 //        ArrayList<Customer> customers = new ArrayList<>();
@@ -32,7 +32,7 @@ public class CustomerController {
         return "customer"; // customer.html
     }
 
-    @PostMapping("/customer")
+    @PostMapping
     public String registerCustomer(@ModelAttribute Customer customer, Model model) {
         customerService.createCustomer(customer);
         model.addAttribute("allCustomers", customerService.getCustomers());
